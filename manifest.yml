@@ -1,7 +1,0 @@
----
-applications:
-- name: neueroute
-  memory: 256M
-  instances: 1
-  url: neueroute.${target-base}
-  path: .
