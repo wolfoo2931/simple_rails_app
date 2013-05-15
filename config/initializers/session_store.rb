@@ -1,6 +1,6 @@
 # Be sure to restart your server when you modify this file.
 
-Simple::Application.config.session_store :redis_store, :servers => APP_CONFIG[:redis].merge({:db => 0, :namespace => 'sessions'})
+Simple::Application.config.session_store :redis_store, :servers => APP_SETTINGS[:redis].merge({:db => 0, :namespace => 'sessions'})
 
 #Simple::Application.config.session_store :cookie_store, key: '_simple_session'
 

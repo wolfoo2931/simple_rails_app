@@ -1,6 +1,9 @@
 require File.expand_path('../boot', __FILE__)
 
+
 require 'rails/all'
+
+require File.expand_path("../../vendor/plugins/Configurator/Configurator.rb", __FILE__)
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
@@ -8,6 +11,8 @@ if defined?(Bundler)
   # If you want your assets lazily compiled in production, use this line
   # Bundler.require(:default, :assets, Rails.env)
 end
+
+APP_SETTINGS = Configurator::Settings.new
 
 module Simple
   class Application < Rails::Application
