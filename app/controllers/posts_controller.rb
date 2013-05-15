@@ -3,6 +3,8 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
+    
+    session[:info] = "posts#index performed"
 
     respond_to do |format|
       format.html # index.html.erb

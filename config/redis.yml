@@ -1,0 +1,15 @@
+development:
+  host: localhost
+  port: 6379
+  name: name
+
+test:
+  host: localhost
+  port: 6379
+  name: name
+
+production:
+  host: <%= JSON.parse( ENV['VCAP_SERVICES'] )['redis-2.6'].first['credentials']['hostname'] rescue 'localhost' %>
+  port: <%= JSON.parse( ENV['VCAP_SERVICES'] )['redis-2.6'].first['credentials']['port'] rescue 6379 %>
+  password:  <%= JSON.parse( ENV['VCAP_SERVICES'] )['mongodb-1.8'].first['credentials']['password'] rescue ''
+  name: <%= JSON.parse( ENV['VCAP_SERVICES'] )['mongodb-1.8'].first['credentials']['password'] rescue 'name'
