@@ -11,5 +11,5 @@ test:
 production:
   host: <%= JSON.parse( ENV['VCAP_SERVICES'] )['redis-2.2'].first['credentials']['hostname'] rescue 'localhost' %>
   port: <%= JSON.parse( ENV['VCAP_SERVICES'] )['redis-2.2'].first['credentials']['port'] rescue 6379 %>
-  password:  <%= JSON.parse( ENV['VCAP_SERVICES'] )['redis-2.2'].first['credentials']['password'] rescue ''
-  name: <%= JSON.parse( ENV['VCAP_SERVICES'] )['redis-2.2'].first['credentials']['password'] rescue 'name'
+  password:  <%= JSON.parse( ENV['VCAP_SERVICES'] )['redis-2.2'].first['credentials']['password'] rescue '' %>
+  name: <%= JSON.parse( ENV['VCAP_SERVICES'] )['redis-2.2'].first['credentials']['name'] rescue 'name' %>
